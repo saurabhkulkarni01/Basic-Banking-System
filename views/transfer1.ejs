@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+<table>
+    <%  customers.forEach(function(customer){ %>
+
+        <tr>
+            <th><%= customer.Name %> </th>
+            <th><%= customer.Email %></th>
+            <th><%= customer.CMoney %></th>
+            </tr>
+    
+        <% }) %>
+   </table>
+
+   
+<form action="/transfer1" method="POST">
+    <label for="fname">From:</label><br>
+    <input type="text" id="name" name="FromName" ><br>
+    <label for="fname">To:</label><br>
+    <input type="text" id="name" name="ToName" ><br>
+    <label  >ammount</label><br>
+    <input type="number" id= "ammount" name="ammount" value="ammount"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+
+
+   <%- include("partials/footer"); -%>

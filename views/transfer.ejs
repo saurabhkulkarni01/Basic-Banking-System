@@ -1,0 +1,70 @@
+<%- include("partials/header"); -%>
+<h1>Transfer Money</h1>
+<br>
+<div class="CustomerList">
+    
+    <table class="table">
+        <thead>
+            <tr  style="color: rgb(247, 217, 88); margin: 10px 0;">
+                <th >Customer Name        </th>
+                <th>Customer EmalID      </th>
+                <th>Money                </th>
+            </tr>
+           </thead>
+        
+        <tbody>
+            <%  customers.forEach(function(customer){ %>
+                
+            
+                <tr >
+                 
+                    <th scope="row"><%= customer.Name %> </th>
+                    <th><%= customer.Email %></th>
+                    <th><%= customer.CMoney %></th>
+               
+                </tr>
+                
+            
+                <% }) %>
+        </tbody>
+        
+       </table>
+    <br>
+
+
+    <div class="transfer-form">
+        <form action="/transfer" method="POST">
+            <label class="formb" for="fname" >From:</label>
+            <select class="form-select formb" aria-label="Default select example" name="FromName" required>
+                <option selected>Choose Account</option>
+                <%  customers.forEach(function(customer){ %>
+                    <option value=<%= customer.Name %>><%= customer.Name %></option>
+                <% }) %>
+            </select>
+        <br>
+        <label  class="formb" for="fname">To:</label>
+            <select class="form-select formb" aria-label="Default select example" name="ToName" required>
+                <option selected>Recipient Account</option>
+                <%  customers.forEach(function(customer){ %>
+                    <option value=<%= customer.Name %>><%= customer.Name %></option>
+                <% }) %>
+            </select>
+        <br>
+        <label  class="formb" >ammount</label>
+            <div class="mb-3 formb">
+                <input type="number" class="form-control" id="exampleInputPassword1" name="ammount" placeholder="Enter Amount" required>
+            </div>
+            <button type="submit" value="Submit" class="btn btn-warning " style=" margin-bottom: 30px; margin-top: 1px; margin-left: 5px;">Transfer</button>
+          </form>
+        </div>
+
+
+       
+
+
+
+</div>
+
+
+   <%- include("partials/footer"); -%>
+ 

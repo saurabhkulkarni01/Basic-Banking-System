@@ -1,0 +1,40 @@
+<%- include("partials/header"); -%>
+
+<div class="Transaction">
+    <h1>Transaction History</h1>
+    <table class="table">
+        <thead>
+            <tr  style="color: rgb(247, 217, 88); margin: 10px 0;">
+                <th>From</th>
+                <th>To</th>
+                <th>Ammount</th>
+                <th>Date and Time</th>
+            </tr>
+           </thead>
+        
+        <tbody>
+            
+            <%  transactions.forEach(function(transaction){ %>
+            
+                <tr >
+                 
+                    <th scope="row"><%= transaction.fromCust %></th>
+                    <th><%= transaction.toCust %></th>
+                <th><%= transaction.Ammount %></th>
+                <th><%= transaction.DateAndTime %> </th>
+                </tr>
+                
+            
+                <% }) %>
+        </tbody>
+        
+       </table>
+
+
+
+
+    
+
+</div>
+  
+<%- include("partials/footer"); -%>

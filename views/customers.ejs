@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+<h1>Customer List</h1>
+<br>
+   <table class="table">
+    <thead>
+        <tr  style="color: rgb(247, 217, 88); margin: 10px 0;">
+            <th >Customer Name        </th>
+            <th>Customer EmalID      </th>
+            <th>Money                </th>
+        </tr>
+       </thead>
+    
+    <tbody>
+        <%  customers.forEach(function(customer){ %>
+            
+        
+            <tr >
+             
+                <th scope="row"><%= customer.Name %> </th>
+                <th><%= customer.Email %></th>
+                <th><%= customer.CMoney %></th>
+           
+            </tr>
+            
+        
+            <% }) %>
+    </tbody>
+    
+   </table>
+<%- include("partials/footer"); -%>
