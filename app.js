@@ -42,17 +42,17 @@ const customerss = [
     },
     {
         Name: 'soumya',
-        Email: 'soumyaIAS@gmail.com',
+        Email: 'soumya@gmail.com',
         CMoney: 100000
     },
     {
         Name: 'Abhisht',
-        Email: 'Ticktocker@gmail.com',
+        Email: 'Abhisht@gmail.com',
         CMoney: 100000
     },
     {
         Name: 'Harshit',
-        Email: 'MachauBhaiyya@yahoo.com',
+        Email: 'Harshit@yahoo.com',
         CMoney: 100000
     },
     {
@@ -72,12 +72,12 @@ const customerss = [
     },
     {
         Name: 'Shubham',
-        Email: 'YeahShubham@yahoo.com',
+        Email: 'Shubham@yahoo.com',
         CMoney: 100000
     },
     {
         Name: 'Subhajit',
-        Email: 'Stalker@gmail.com',
+        Email: 'Subhajit@gmail.com',
         CMoney: 100000
 	},
     {
@@ -100,6 +100,9 @@ const customerss = [
          });
          */
 
+
+
+         
          Customer.find({},function(err,clntItem){
             console.log(clntItem.length);
             if(clntItem.length === 0){
